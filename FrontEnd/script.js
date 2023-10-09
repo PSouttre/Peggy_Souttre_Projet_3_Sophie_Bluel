@@ -1,3 +1,5 @@
+/*****************Récupération des travaux depuis le back end *************/
+
 
     fetch ("http://localhost:5678/api/works")
     .then (response => response.json())
@@ -19,7 +21,7 @@
 
     })**/
 
-
+    /** 
       // Récupération de l'élément du DOM qui accueillera les fiches
       const sectionFiches = document.querySelector(".fiches");
       // Création d’une balise dédiée à une pièce automobile
@@ -35,6 +37,37 @@
       // On rattache l’image à pieceElement (la balise article)
       pieceElement.appendChild(imageElement);
       // Idem pour le nom, le prix et la catégorie...
-      
+      */
 
-      fetch ("http://localhost:5678/api/users/login")
+
+
+/*************** Envoyer les valeurs d'entrée du formulaire login***********/
+
+/* Selection du formulaire par son id */
+const formulaire = document.getElementById ("login");
+
+/* Ajout d'un gestionnaire d'évenement pour le soumettre*/
+formulaire.addEventListener ("submit", (event)=>{
+      event.preventDefault();
+});/*Empêche la page de se recharger lors du submit*/
+
+/*Récupérer les données du formulaire*/
+const formulaireData = new formulaireData (formulaire);
+
+/*Envoyer les données au serveur*/
+await fetch ("http://localhost:5678/api/users/login", {
+  method :"POST",
+  body :formulaireData
+})
+.then (response => response.json())
+.then (response2 => {
+  if (response2.status === 200){
+      window.location.href = "url page d'accueil.html"
+    }
+  else {
+    throw new console.error( "Identifiant ou mot de passe incorrect");
+  }
+})
+
+/* Stocker le token d'authentification dans le localStorage*/
+const token = window.localStorage.setItem ("formulaireData", "formulaireDataValue");
