@@ -141,11 +141,17 @@ li:hover {
 	width: 50%;
 margin: auto;
 }
-#contact, #login > * {
+#contact > * {
 	text-align: center;
 
 }
-#contact h2{
+
+#login > * {
+	text-align: center;
+
+}
+
+#contact h2, #login h2 {
 	margin-bottom: 20px;
 }
 #contact form, #login form {
@@ -178,6 +184,10 @@ input[type="submit"]{
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+}
+
+#login a {
+	text-align: center;
 }
 
 footer nav ul {
