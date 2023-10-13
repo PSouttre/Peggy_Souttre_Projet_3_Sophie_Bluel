@@ -1,6 +1,6 @@
 /*****************Récupération des travaux depuis le back end *************/
 
-
+/*
     fetch ("http://localhost:5678/api/works")
     .then (response => response.json())
     .then (data => {
@@ -10,7 +10,7 @@
           }
         }
       )
-      
+      */
       /*console.log (data))
       {
         const galleryDiv = document.querySelector (".gallery");
@@ -53,9 +53,10 @@ formulaire.addEventListener ("submit", (event)=>{
 
 /*Récupérer les données du formulaire*/
 const formulaireData = new formulaireData (formulaire);
+console.log (formulaireData)
 
 /*Envoyer les données au serveur*/
-await fetch ("http://localhost:5678/api/users/login", {
+ fetch ("http://localhost:5678/api/users/login", {
   method :"POST",
   body :formulaireData
 })
