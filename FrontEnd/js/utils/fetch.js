@@ -2,7 +2,7 @@
 export const getWorks = async () => {
     try {
         // on part chercher les données (mais ça peut prendre du temps)
-        const data = await fetch("http://localhost:567/api/works", {
+        const data = await fetch("http://localhost:5678/api/works", {
             method: "GET"
         })
 
