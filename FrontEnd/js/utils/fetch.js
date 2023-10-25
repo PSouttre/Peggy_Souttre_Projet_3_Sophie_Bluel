@@ -18,6 +18,8 @@ export const getWorks = async () => {
     }
 }
 
+// function async qui permet de récupérer les categories
+
 export const getCategories = async () => {
     try {
         const dataCategories = await fetch ("http://localhost:5678/api/categories")
