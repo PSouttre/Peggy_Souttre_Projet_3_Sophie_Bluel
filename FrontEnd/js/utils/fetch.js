@@ -17,3 +17,13 @@ export const getWorks = async () => {
         // gère l'erreur avec de UI (ex: message d'erreur, fin du loader, redirection...)
     }
 }
+
+export const getCategories = async () => {
+    try {
+        const dataCategories = await fetch ("http://localhost:5678/api/categories")
+        const responseCategories = await dataCategories.json()
+        return responseCategories
+    } catch (error) {
+        console.log(error)
+    }
+}
