@@ -32,6 +32,13 @@ export const displayCategories = (categories) => {
 
         //on insère dans la div filters
         filters.innerHTML += buttonCategories
+
+        //Ajout d'un eventListener au moment du clic d'un bouton catégorie
+        buttonCategories.addEventListener("click", () => {
+            //fonction que fait le tri de la catégorie par categoryId ds works
+        })
+
     }
 }
+
  

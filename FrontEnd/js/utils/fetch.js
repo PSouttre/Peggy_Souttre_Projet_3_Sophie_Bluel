@@ -25,6 +25,7 @@ export const getCategories = async () => {
         const dataCategories = await fetch ("http://localhost:5678/api/categories")
         const responseCategories = await dataCategories.json()
         return responseCategories
+        
     } catch (error) {
         console.log(error)
     }
