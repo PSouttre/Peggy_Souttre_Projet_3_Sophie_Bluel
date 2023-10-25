@@ -16,6 +16,8 @@ export const displayWorks = (works) => {
   }
 }
 
+
+
 // Affichage des catégories
 export const displayCategories = (categories) => {
 
@@ -26,10 +28,10 @@ export const displayCategories = (categories) => {
     for (let i =0; i< categories.length; i++) {
 
         // créer un bouton qui correspond à une catégorie
-        const buttonCategories = blablabla
+        const buttonCategories = `<button>${categories[i].name}</button>`
 
         //on insère dans la div filters
-        filters.innerHTML += blablabla
+        filters.innerHTML += buttonCategories
     }
 }
  
