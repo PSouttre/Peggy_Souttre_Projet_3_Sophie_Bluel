@@ -23,7 +23,6 @@ export const displayCategories = (categories) => {
 
     //on récupère là où on veut afficher nos catégories
     const filters = document.querySelector('.filters')
-
     // on boucle sur toutes les catégories
     for (let i =0; i< categories.length; i++) {
 
@@ -33,17 +32,12 @@ export const displayCategories = (categories) => {
         //on insère dans la div filters
         filters.innerHTML += buttonCategories
 
-
-    // Ajouter une class à chaque bouton
-      // const buttonFilters = document.querySelectorAll("button")
-        //buttonFilters.classList.add("objet", "Appartements", "Hôtels et Restaurants")
-
-    //Ajout d'un eventListener au moment du clic d'un bouton catégorie
-       // buttonCategories.addEventListener("click", () => {
-            //fonction que fait le tri de la catégorie par categoryId ds works
-      //  })
-
     }
-}
+    
 
- 
+}
+/*
+     const buttonCategoryAll = `<button>${Tous}</button>`
+    filters.innerHTML = buttonCategoryAll
+
+*/

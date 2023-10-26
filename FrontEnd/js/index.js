@@ -11,6 +11,7 @@ const init = async () => {
 
 init()
 
+
 const initCategories = async () => {
   const categories = await getCategories()
   displayCategories(categories)
