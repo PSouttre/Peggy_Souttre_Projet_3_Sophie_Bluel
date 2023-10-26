@@ -33,10 +33,15 @@ export const displayCategories = (categories) => {
         //on insère dans la div filters
         filters.innerHTML += buttonCategories
 
-        //Ajout d'un eventListener au moment du clic d'un bouton catégorie
-        buttonCategories.addEventListener("click", () => {
+
+    // Ajouter une class à chaque bouton
+      // const buttonFilters = document.querySelectorAll("button")
+        //buttonFilters.classList.add("objet", "Appartements", "Hôtels et Restaurants")
+
+    //Ajout d'un eventListener au moment du clic d'un bouton catégorie
+       // buttonCategories.addEventListener("click", () => {
             //fonction que fait le tri de la catégorie par categoryId ds works
-        })
+      //  })
 
     }
 }

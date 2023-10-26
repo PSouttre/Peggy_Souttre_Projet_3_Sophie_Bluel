@@ -137,6 +137,11 @@ button {
 	font-family: 'Syne';
 }
 
+button:hover {
+	background-color: #1D6154;
+	color: white;
+}
+
 .filters {
 	display: flex;
 	justify-content: center;
