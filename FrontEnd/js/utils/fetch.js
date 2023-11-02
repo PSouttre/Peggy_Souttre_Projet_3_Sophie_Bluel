@@ -29,35 +29,22 @@ export const getCategories = async () => {
   }
 };
 
-/************   Authentification de l'utilisateur *******************/
-
-const inputEmail = document.querySelector('input[type="email"]');
-const inputPassword = document.querySelector('input[type="password"]');
-const form = document.querySelector("form");
-
-console.log(inputEmail);
-
-inputEmail.addEventListener("input", (e) => {
-  const emailUser = e.target.value;
-});
-
-inputPassword.addEventListener("input", (e) => {
-  const passwordUser = e.target.value;
-});
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-
-const dataUser = { emailUser, passwordUser };
-
-export const resultPostAdmin = async () => {
+export const postLogin = async (data) => {
   try {
     const dataAdmin = await fetch("http://localhost:5678/api/users/login", {
       method: "POST",
-      body: "dataUser",
+      body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
+
+    if (dataAdmin.status == 200) {
+      const responseLogin = await dataAdmin.json();
+      return responseLogin;
+    } else {
+      return {
+        error: true,
+      };
+    }
   } catch (error) {
     console.log(error);
   }
