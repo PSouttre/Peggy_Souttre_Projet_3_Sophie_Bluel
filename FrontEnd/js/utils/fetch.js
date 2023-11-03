@@ -29,6 +29,8 @@ export const getCategories = async () => {
   }
 };
 
+// fonction pour envoyer email + mdp et récupérer userid et token
+
 export const postLogin = async (data) => {
   try {
     const dataAdmin = await fetch("http://localhost:5678/api/users/login", {
