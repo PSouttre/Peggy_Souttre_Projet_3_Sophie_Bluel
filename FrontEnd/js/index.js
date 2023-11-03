@@ -18,7 +18,8 @@ const init = async () => {
   // 3 - si j'ai un token dans le localStorage
   // alors on affiche les boutons de modifications
   if (localStorage.getItem("userLogin") != null) {
-    header;
+    blackBanner.style.display = "block";
+    mesProjetsModeEdit.style.display = "block";
   }
 };
 
