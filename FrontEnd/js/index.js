@@ -17,13 +17,16 @@ const init = async () => {
 
   // 3 - si j'ai un token dans le localStorage
   // alors on affiche les boutons de modifications
-
-  // ============================================ //
-  // !! COMMIT AVANT DE FAIRE CES DEUX ETAPES !!
-  // ============================================ //
-  // 4 - commence par essayer de delete les works
-
-  // 5 - ajout d'un work
+  if (localStorage.getItem("userLogin") != null) {
+    header;
+  }
 };
+
+// ============================================ //
+// !! COMMIT AVANT DE FAIRE CES DEUX ETAPES !!
+// ============================================ //
+// 4 - commence par essayer de delete les works
+
+// 5 - ajout d'un work
 
 init();

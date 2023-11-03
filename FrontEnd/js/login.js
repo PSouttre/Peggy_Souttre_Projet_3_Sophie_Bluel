@@ -14,7 +14,7 @@ const init = async () => {
     // const password = inputPassword.value;
     // const data = { email, password };
 
-    const response = postLogin(data);
+    const response = postLogin();
     const user = {
       userId: responseLogin.userId,
       token: responseLogin.token,
@@ -29,6 +29,7 @@ const init = async () => {
       localStorage.setItem("userLogin", JSON.stringify(user));
 
       // 2 - on redirige vers /index.html
+      window.location.href = "/index.html";
     }
   });
 };
