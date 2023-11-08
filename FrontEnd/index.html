@@ -8,6 +8,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/reset.css">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="https://kit.fontawesome.com/2530770246.js" crossorigin="anonymous"></script>
 	<script src="./js/index.js" type="module" defer></script>
@@ -66,8 +67,6 @@
 
 		</form>
 	</section>
-
-
 </main>
 
 <footer>
@@ -77,5 +76,34 @@
 		</ul>
 	</nav>
 </footer>
+
+<!--MODALE-->
+<section class="modale-container">
+	<div id="modale">
+		<div class="modaleHomepageEdit1">
+			<h2>Galerie photo</h2>
+				<div class="galleryModale">
+					<i class="fa-solid fa-trash-can"></i>
+				</div>
+				<div class="buttonAddPhoto">
+					<input type="submit" value="Ajouter une photo">
+				</div>
+		</div>
+		<div class="modaleHomepageEdit2">
+			<h2>Ajout photo</h2>
+	
+			<form action="" method="post">
+				<label for="title" class="title">Titre</label>
+				<input type="text" class="title" id="title" name="title">
+	
+				<label for="category" class="category">Catégorie</label>
+				<input type="text" class="category" id="category" name="category">
+				
+				<input type="submit" value="Valider">
+			</form>
+		</div>
+	</div>
+</section>
+
 </body>
 </html>

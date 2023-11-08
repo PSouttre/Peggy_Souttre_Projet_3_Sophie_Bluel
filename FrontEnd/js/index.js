@@ -3,7 +3,7 @@ import { displayWorks } from "./utils/dom.js";
 import { getCategories } from "./utils/fetch.js";
 import { displayCategories } from "./utils/dom.js";
 import { onClickFilters } from "./filters.js";
-import { displayWorksModale } from "./modale.js";
+import { displayWorksModale, openModale, closeModale } from "./modale.js";
 
 // FICHIER D'INITIALISATION
 const init = async () => {
@@ -16,6 +16,12 @@ const init = async () => {
   displayWorksModale(works);
 
   onClickFilters();
+
+  const buttonModifier = document.querySelector("#modifier");
+  buttonModifier.addEventListener("click", openModale);
+
+  // const cross = document.querySelector(".close-modale");
+  // cross.addEventListener("click", closeModale);
 
   // 3 - si j'ai un token dans le localStorage
   // alors on affiche les boutons de modifications
