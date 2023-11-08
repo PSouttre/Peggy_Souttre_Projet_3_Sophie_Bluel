@@ -3,7 +3,12 @@ import { displayWorks } from "./utils/dom.js";
 import { getCategories } from "./utils/fetch.js";
 import { displayCategories } from "./utils/dom.js";
 import { onClickFilters } from "./filters.js";
-import { displayWorksModale, openModale, closeModale } from "./modale.js";
+import {
+  displayWorksModale,
+  openModaleEdit1,
+  openModaleEdit2,
+  closeModale,
+} from "./modale.js";
 
 // FICHIER D'INITIALISATION
 const init = async () => {
@@ -17,20 +22,23 @@ const init = async () => {
 
   onClickFilters();
 
-  const buttonModifier = document.querySelector("#modifier");
-  buttonModifier.addEventListener("click", openModale);
+  const buttonModifier = document.querySelector("#buttonModifier");
+  buttonModifier.addEventListener("click", openModaleEdit1);
+
+  const buttonAddPhoto = document.querySelector(".buttonAddPhoto");
+  buttonAddPhoto.addEventListener("click", openModaleEdit2);
 
   // const cross = document.querySelector(".close-modale");
   // cross.addEventListener("click", closeModale);
-
-  // 3 - si j'ai un token dans le localStorage
-  // alors on affiche les boutons de modifications
-
-  // if (localStorage.getItem("userLogin") != null) {
-  //   blackBanner.style.display = "block";
-  //   mesProjetsModeEdit.style.display = "block";
-  // }
 };
+
+// 3 - si j'ai un token dans le localStorage
+// alors on affiche les boutons de modifications
+
+// if (localStorage.getItem("userLogin") != null) {
+//   blackBanner.style.display = "block";
+//   mesProjetsModeEdit.style.display = "block";
+// }
 
 // ============================================ //
 // !! COMMIT AVANT DE FAIRE CES DEUX ETAPES !!

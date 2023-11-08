@@ -1,6 +1,11 @@
-export const openModale = () => {
-  const modale = document.querySelector(".modale-container");
+export const openModaleEdit1 = () => {
+  const modale = document.querySelector(".modaleHomePageEdit1");
   modale.style.display = "block";
+};
+
+export const openModaleEdit2 = () => {
+  const modale = document.querySelector(".modaleHomePageEdit2");
+  openModaleEdit2.style.display = "block";
 };
 
 export const closeModale = () => {
