@@ -19,9 +19,11 @@ export const displayWorksModale = (works) => {
   // on boucle sur TOUS les works
   for (let i = 0; i < works.length; i++) {
     // créer une figure qui correspond à un work
-    const figureModale = `<figure>
+    const figureModale =
+      `<figure>
         <img src=${works[i].imageUrl} alt=${works[i].title}>
-      </figure>`;
+      </figure>` + `<i class="fa-solid fa-trash-can" id="trash" ></i>`;
+
     // on insère dans la gallery
     galleryModale.innerHTML += figureModale;
   }

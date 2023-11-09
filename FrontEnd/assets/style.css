@@ -211,6 +211,7 @@ input[type="submit"]{
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+	cursor: pointer;
 }
 
 #login a {
@@ -266,6 +267,9 @@ footer nav ul {
 	top: 20px;
 	left: 620px;
 	font-size: 20px;
+	cursor: pointer;
+	color: rgba(0, 0, 0, 0.6);
+
 }
 
 
@@ -274,7 +278,7 @@ footer nav ul {
 	font-weight: 400;
 	font-size: 19px;
 	color: black;
-	padding: 20px;
+	padding: 50px;
 } 
 
 .modaleHomePageEdit1 {
@@ -289,6 +293,7 @@ footer nav ul {
 .buttonAddPhoto {
 	border-top: 1px #B3B3B3 solid;
 	margin: 15px;
+	padding: 15px;
 } 
 
 .modaleHomePageEdit2 {
