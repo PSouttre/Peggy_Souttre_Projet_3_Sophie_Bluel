@@ -28,8 +28,11 @@ const init = async () => {
   const buttonAddPhoto = document.querySelector(".buttonAddPhoto");
   buttonAddPhoto.addEventListener("click", openModaleEdit2);
 
-  // const cross = document.querySelector(".close-modale");
-  // cross.addEventListener("click", closeModale);
+  const cross = document.querySelector("#cross");
+  cross.addEventListener("click", closeModale);
+
+  const shadow = document.querySelector(".modaleContainer");
+  shadow.addEventListener("click", closeModale);
 };
 
 // 3 - si j'ai un token dans le localStorage

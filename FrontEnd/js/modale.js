@@ -9,7 +9,7 @@ export const openModaleEdit2 = () => {
 };
 
 export const closeModale = () => {
-  const modale = document.querySelector(".modale-container");
+  const modale = document.querySelector(".modaleContainer");
   modale.style.display = "none";
 };
 
@@ -22,7 +22,8 @@ export const displayWorksModale = (works) => {
     const figureModale =
       `<figure>
         <img src=${works[i].imageUrl} alt=${works[i].title}>
-      </figure>` + `<i class="fa-solid fa-trash-can" id="trash" ></i>`;
+      </figure>` +
+      `<div class = "trash"><i class="fa-solid fa-trash-can" id="trash" ></i></div>`;
 
     // on insère dans la gallery
     galleryModale.innerHTML += figureModale;
