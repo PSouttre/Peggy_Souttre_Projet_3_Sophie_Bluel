@@ -5,7 +5,12 @@ import {
   displayAdminPart,
 } from "./utils/dom.js";
 import { onClickFilters } from "./utils/filters.js";
-import { openModale, closeModale, displayWorksModale } from "./utils/modale.js";
+import {
+  openModale,
+  openModale2,
+  closeModale,
+  displayWorksModale,
+} from "./utils/modale.js";
 import { logout } from "./utils/auth.js";
 
 // FICHIER D'INITIALISATION
@@ -25,6 +30,7 @@ const init = async () => {
 
   // Modale
   openModale();
+  openModale2();
   closeModale();
   displayWorksModale(works);
 };

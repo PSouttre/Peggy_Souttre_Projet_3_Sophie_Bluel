@@ -7,6 +7,17 @@ export const openModale = () => {
   });
 };
 
+export const openModale2 = () => {
+  const addPhoto = document.querySelector(".buttonAddPhoto");
+  const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
+  const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
+
+  addPhoto.addEventListener("click", () => {
+    modaleEdit1.classList.toggle("hidden");
+    modaleEdit2.classList.toggle("hidden");
+  });
+};
+
 export const closeModale = () => {
   const cross = document.querySelector("#cross");
   const modale = document.querySelector(".modaleContainer");

@@ -260,8 +260,6 @@ footer nav ul {
 	border-radius: 4px;
 	/* top: 5px;
 	right: 5px; */
-
-
  }
 
 
@@ -306,14 +304,8 @@ figure {
 
 }
 
-
-.buttonAddPhoto {
-	border-top: 1px #B3B3B3 solid;
-	padding: 20px;
-} 
-
 .modaleHomePageEdit2 {
-	display: none;
+	/* display: none; */
 }
 
 
