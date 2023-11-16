@@ -34,3 +34,18 @@ export const displayCategories = (categories) => {
     filters.innerHTML += buttonCategories;
   }
 };
+
+export const displayAdminPart = () => {
+  // si j'ai un token dans le localStorage
+  // alors on affiche les boutons de modifications
+  // JSON.parse ==> string to object
+  const localData = JSON.parse(localStorage.getItem("user"));
+
+  if (localData && localData.token) {
+    const adminDiv = document.querySelectorAll(".onlyAdmin");
+
+    adminDiv.forEach((div) => {
+      div.classList.toggle("hidden");
+    });
+  }
+};

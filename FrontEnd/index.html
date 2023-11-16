@@ -14,7 +14,7 @@
 	<script src="./js/index.js" type="module" defer></script>
 </head>
 <body>	
-	<div id="blackBanner">
+	<div id="blackBanner" class="onlyAdmin hidden">
 		<i class="fa-regular fa-pen-to-square"></i>
 		<p>Mode édition</p>
 	</div>
@@ -25,7 +25,8 @@
 		<ul>
 			<li>Projets</li>
 			<li>Contact</li>
-			<li><a href="login.html">Log In</a></li>
+			<li class="login onlyAdmin"><a href="login.html">Log In</a></li>
+			<li class="logout onlyAdmin hidden">Log Out</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -45,7 +46,7 @@
 	<section id="portfolio">
 		<div id="mesProjetsModeEdit">
 			<h2>Mes Projets</h2>
-			<div id="modifier">
+			<div id="modifier" class="onlyAdmin hidden" >
 				<i class="fa-regular fa-pen-to-square"></i>
 				<button id="buttonModifier">modifier</button>
 			</div>
@@ -78,7 +79,7 @@
 </footer>
 
 <!--MODALE-->
-<section class="modaleContainer">
+<section class="modaleContainer hidden">
 	<div id="modale">
 		<div class="modaleHomePageEdit1">
 			<i class="fa-solid fa-xmark" id="cross"></i>
@@ -89,9 +90,9 @@
 					<input type="submit" value="Ajouter une photo">
 				</div>
 		</div>
-		<div class="modaleHomePageEdit2">
+
+		<div class="modaleHomePageEdit2 hidden">
 			<h2>Ajout photo</h2>
-	
 			<form action="" method="post">
 				<label for="title" class="title">Titre</label>
 				<input type="text" class="title" id="title" name="title">
@@ -107,3 +108,4 @@
 
 </body>
 </html>
+

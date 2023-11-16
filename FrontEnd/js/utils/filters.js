@@ -1,6 +1,6 @@
 // Ajout d'un eventListener au moment du clic d'un bouton catégorie
-import { getWorks } from "./utils/fetch.js";
-import { displayWorks } from "./utils/dom.js";
+import { getWorks } from "./fetch.js";
+import { displayWorks } from "./dom.js";
 
 export const onClickFilters = () => {
   const buttonCategories = document.querySelectorAll(".filter-tag");

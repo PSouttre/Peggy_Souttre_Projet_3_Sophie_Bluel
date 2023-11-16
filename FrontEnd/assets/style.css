@@ -22,7 +22,6 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	display: none;
 	gap: 21px;
 	padding: 20px;
 	width: 100vw;
@@ -106,7 +105,6 @@ li:hover {
 	flex-direction: row;
 	align-items: center;
 	gap: 10px;
-	display: none;
 }
 
 #modifier button {
@@ -227,7 +225,6 @@ footer nav ul {
 
 /** MODALE */
 .modaleContainer {
-	display: none;
 	z-index: 10;
 	position: fixed;
 	top: 0;
@@ -311,4 +308,12 @@ footer nav ul {
 
 .modaleHomePageEdit2 {
 	display: none;
+}
+
+
+.error{
+	color: red;
+}
+.hidden {
+	display: none !important;
 }

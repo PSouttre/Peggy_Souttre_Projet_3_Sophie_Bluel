@@ -1,17 +1,33 @@
-const inputEmail = document.querySelector('input[type="email"]');
-const inputPassword = document.querySelector('input[type="password"]');
-const form = document.querySelector("form");
+import { postLogin } from "./fetch.js";
 
-console.log(inputEmail);
+export const handleForm = () => {
+  const form = document.querySelector("form");
+  const inputEmail = document.querySelector("#email");
+  const inputPassword = document.querySelector("#mdp");
 
-inputName.addEventListener("input", (e) => {
-  pseudo = e.target.value;
-});
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-select.addEventListener("input", (e) => {
-  language = e.target.value;
-});
+    // création des data à envoyé au backend
+    const data = {
+      email: inputEmail.value,
+      password: inputPassword.value,
+    };
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
+    const response = await postLogin(data);
+
+    // gestion de la réponse
+    // si NOK
+    if (response.error) {
+      // gérer l'erreur
+      const error = document.querySelector(".error");
+      error.innerHTML = response.message;
+      error.classList.remove("hidden");
+    } else {
+      // si OK
+      localStorage.setItem("user", JSON.stringify(response));
+      // redirige sur la home
+      window.location.href = "index.html";
+    }
+  });
+};

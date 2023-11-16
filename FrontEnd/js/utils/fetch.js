@@ -45,9 +45,14 @@ export const postLogin = async (data) => {
     } else {
       return {
         error: true,
+        message: "Une erreur s'est produite, veuillez réessayer.",
       };
     }
   } catch (error) {
     console.log(error);
+    return {
+      error: true,
+      message: "fetch not working",
+    };
   }
 };
