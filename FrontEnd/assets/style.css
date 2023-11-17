@@ -162,7 +162,7 @@ button:hover {
 	width: 100%;
 
 }
-#contact, #login, .modaleHomepageEdit1, .modaleHomepageEdit2 {
+#contact, #login, .modaleHomePageEdit1, .modaleHomePageEdit2 {
 	width: 50%;
 margin: auto;
 }
@@ -176,23 +176,23 @@ margin: auto;
 
 }
 
-#contact h2, #login h2, .modaleHomepageEdit2 h2 {
+#contact h2, #login h2, .modaleHomePageEdit2 h2 {
 	margin-bottom: 20px;
 }
-#contact form, #login form, .modaleHomepageEdit2 form {
+#contact form, #login form, .modaleHomePageEdit2 form {
 	text-align: left;
 	margin-top:30px;
 	display: flex;
 	flex-direction: column;
 }
 
-#contact input, #login input, .modaleHomepageEdit2 input {
+#contact input, #login input, .modaleHomePageEdit2 input {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-#contact label, #login label, .modaleHomepageEdit2 label {
+#contact label, #login label, .modaleHomePageEdit2 label {
 	margin: 2em 0 1em 0;
 }
 #contact textarea {
@@ -247,6 +247,8 @@ footer nav ul {
 	border-radius: 10px;
 }
 
+/* MODALE EDIT1 */
+
 .galleryModale img {
 	width: 90px;
 	position: relative;
@@ -286,28 +288,76 @@ figure {
 }
 
 
-.modaleHomePageEdit1 h2 {
+.modaleHomePageEdit1 h2 , .modaleHomePageEdit2 h2 {
 	font-family: 'Work Sans' ;
 	font-weight: 400;
-	font-size: 19px;
+	font-size: 26px;
 	color: black;
 	padding: 50px;
 } 
 
-.modaleHomePageEdit1 {
+.modaleHomePageEdit1, .modaleHomePageEdit2 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	position: relative;
 	width: 100%;
 	height: 100%;
-
 }
 
+/* MODALE EDIT2*/
 .modaleHomePageEdit2 {
-	/* display: none; */
+	position: relative;
 }
 
+.addPhotoEdit2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #E8F1F6;
+	border-radius: 3px;
+	width: 450px;
+	padding: 20px;
+}
+
+#logoImg {
+	font-size: 75px;
+	color: #B9C5CC;
+}
+
+#buttonAddImg {
+	background-color: #B9C5CC;
+	color: #306685;
+	font-size: 14px;
+	font-family: 'Work Sans';
+	font-weight: 500;
+	width: 200px;
+	margin: 20px 0 10px 0;
+}
+
+.addPhotoEdit2 p {
+	color: #444444;
+	font-size: 10px;
+	font-weight: 400;
+}
+
+#arrow {
+	position: absolute;
+	top: 30px ;
+	left: 30px;
+	font-size: 24px;
+}
+
+#crossEdit2 {
+	position: absolute;
+	top: 30px ;
+	right: 30px;
+	font-size: 24px;
+}
+
+#buttonValider {
+	background-color: #A7A7A7;
+}
 
 .error{
 	color: red;
