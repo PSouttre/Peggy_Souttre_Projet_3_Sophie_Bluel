@@ -56,3 +56,21 @@ export const postLogin = async (data) => {
     };
   }
 };
+
+export const postWork = async () => {
+  try {
+    const newWork => await fetch ("http://localhost:5678/api/works", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    
+  } catch (error) {
+    console.log(error);
+  } return {
+      error : true
+      message : ""
+  }
+
+
+}

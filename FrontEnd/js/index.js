@@ -9,6 +9,7 @@ import {
   openModale,
   openModale2,
   closeModale,
+  back,
   displayWorksModale,
 } from "./utils/modale.js";
 import { logout } from "./utils/auth.js";
@@ -32,6 +33,7 @@ const init = async () => {
   openModale();
   openModale2();
   closeModale();
+  back();
   displayWorksModale(works);
 };
 

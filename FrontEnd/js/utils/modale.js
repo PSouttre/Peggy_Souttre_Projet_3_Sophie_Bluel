@@ -21,9 +21,30 @@ export const openModale2 = () => {
 export const closeModale = () => {
   const cross = document.querySelector("#cross");
   const modale = document.querySelector(".modaleContainer");
+  const crossEdit2 = document.querySelector("#crossEdit2");
 
   cross.addEventListener("click", () => {
     modale.classList.add("hidden");
+  });
+
+  // fermer en cliquant en dehors de la modale
+  // modale.addEventListener("click", () => {
+  //   modale.classList.add("hidden");
+  // });
+
+  crossEdit2.addEventListener("click", () => {
+    modale.classList.add("hidden");
+  });
+};
+
+export const back = () => {
+  const arrow = document.querySelector("#arrow");
+  const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
+  const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
+
+  arrow.addEventListener("click", () => {
+    modaleEdit1.classList.toggle("hidden");
+    modaleEdit2.classList.toggle("hidden");
   });
 };
 
