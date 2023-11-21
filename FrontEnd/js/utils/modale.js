@@ -1,3 +1,6 @@
+import { removeWork } from "./fetch.js";
+import { postWork } from "./fetch.js";
+
 export const openModale = () => {
   const modifierBtn = document.querySelector("#modifier");
   const modale = document.querySelector(".modaleContainer");
@@ -80,3 +83,19 @@ export const displayWorksModale = (works) => {
     });
   });
 };
+
+// on récupère le nouveau work
+const imageUrl = document.getElementById("");
+const title = document.getElementById("title");
+const category = document.getElementById("category");
+
+const newWork = {
+  imageUrl,
+  title,
+  category,
+};
+// on ajoute l'évenement : au click du bouton envoyer = appelle le fetch
+const buttonValider = document.getElementById("buttonValider");
+buttonValider.addEventListener("click", () => {
+  postWork();
+});

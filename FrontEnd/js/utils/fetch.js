@@ -59,7 +59,7 @@ export const postLogin = async (data) => {
 
 // // Suppression de travaux existants
 export const removeWork = async (id) => {
-  const user = localStorage.getItem("user");
+  const user = JSON.parse(localStorage.getItem("user"));
 
   try {
     await fetch(`http://localhost:5678/api/works/${id}`, {
@@ -81,20 +81,14 @@ export const removeWork = async (id) => {
 // Envoi d'un nouveau projet
 export const postWork = async () => {
   try {
-    const newWork = await fetch("http://localhost:5678/api/works", {
+    await fetch("http://localhost:5678/api/works", {
       method: "POST",
-      body: JSON.stringify(FormData),
-      headers: { "Content-Type": "multipart/form-data" },
+      body: JSON.stringify(newWork),
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${user.token}`,
+      },
     });
-
-    const FormData = {
-      imageUrl: "image",
-      title: "title",
-      categoryId: "category",
-    };
-
-    // // si j'ai image + title + category => postWork
-    // Ajouter le work dans le portfolio + modale
   } catch (error) {
     console.log(error);
     return {
