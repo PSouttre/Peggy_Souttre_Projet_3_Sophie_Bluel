@@ -1,0 +1,154 @@
+/** MODALE */
+.modaleContainer {
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+}
+
+.shaddow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4)
+}
+
+#modale {
+	background-color: #fff;
+	position: absolute;
+	width: 70%;
+	height: 85%;
+	max-width: 720px;
+	max-height: 700px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+}
+
+/* MODALE EDIT1 */
+
+.galleryModale img {
+	width: 90px;
+	position: relative;
+}
+
+.trash {
+	background-color: #1E3050;
+	color:white; 
+	position: absolute; 
+	padding: 5px;
+	border-radius: 4px;
+	top: 5px;
+	right: 5px;
+ }
+
+
+.galleryModale {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 0 80px;
+	gap: 5px ;
+	justify-content: space-between ;
+}
+figure {
+	padding-bottom: 20px;
+    position: relative;
+}
+
+#cross {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 20px;
+	cursor: pointer;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+
+.modaleHomePageEdit1 h2 , .modaleHomePageEdit2 h2 {
+	font-family: 'Work Sans' ;
+	font-weight: 400;
+	font-size: 26px;
+	color: black;
+	padding: 50px;
+} 
+
+.modaleHomePageEdit1, .modaleHomePageEdit2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* MODALE EDIT2*/
+.modaleHomePageEdit2 {
+	position: relative;
+}
+
+.addPhotoEdit2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #E8F1F6;
+	border-radius: 3px;
+	width: 450px;
+	padding: 20px;
+}
+
+#logoImg {
+	font-size: 75px;
+	color: #B9C5CC;
+}
+
+#buttonAddImg {
+	background-color: #B9C5CC;
+	color: #306685;
+	font-size: 14px;
+	font-family: 'Work Sans';
+	font-weight: 500;
+	width: 200px;
+	margin: 20px 0 10px 0;
+}
+
+.addPhotoEdit2 p {
+	color: #444444;
+	font-size: 10px;
+	font-weight: 400;
+}
+
+#arrow {
+	position: absolute;
+	top: 30px ;
+	left: 30px;
+	font-size: 24px;
+	cursor: pointer;
+
+}
+
+#crossEdit2 {
+	position: absolute;
+	top: 30px ;
+	right: 30px;
+	font-size: 24px;
+	cursor: pointer;
+
+}
+
+#buttonValider {
+	background-color: #A7A7A7;
+}
+
+hr {
+	color: #B3B3B3;
+	width: 420px;
+	height: 1px;
+}

@@ -1,6 +1,11 @@
 export const openModale = () => {
   const modifierBtn = document.querySelector("#modifier");
   const modale = document.querySelector(".modaleContainer");
+  const shaddow = document.querySelector(".shaddow");
+
+  shaddow.addEventListener("click", () => {
+    modale.classList.add("hidden");
+  });
 
   modifierBtn.addEventListener("click", () => {
     modale.classList.remove("hidden");
@@ -22,17 +27,18 @@ export const closeModale = () => {
   const cross = document.querySelector("#cross");
   const modale = document.querySelector(".modaleContainer");
   const crossEdit2 = document.querySelector("#crossEdit2");
+  const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
+  const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
 
   cross.addEventListener("click", () => {
     modale.classList.add("hidden");
   });
 
-  // fermer en cliquant en dehors de la modale
-  // modale.addEventListener("click", () => {
-  //   modale.classList.add("hidden");
-  // });
-
   crossEdit2.addEventListener("click", () => {
+    if (!modaleEdit2.classList.contains("hidden")) {
+      modaleEdit1.classList.toggle("hidden");
+      modaleEdit2.classList.toggle("hidden");
+    }
     modale.classList.add("hidden");
   });
 };
@@ -57,11 +63,20 @@ export const displayWorksModale = (works) => {
     const figureModale = `
       <figure id="id-${works[i].id}">
         <img src=${works[i].imageUrl} alt=${works[i].title}>
-        <div class="trash id-${works[i].id}"><i class="fa-solid fa-trash-can" id="trash" ></i></div>
+        <div id="${works[i].id}" class="trash"><i class="fa-solid fa-trash-can"></i></div>
       </figure>
       `;
 
     // on insère dans la gallery
     galleryModale.innerHTML += figureModale;
   }
+
+  // on récupère nos poubelles
+  const trashes = document.querySelectorAll(".trash");
+  // on ajoute l'evenement onClick qui appelera le fetch avec le bon id
+  trashes.forEach((trash) => {
+    trash.addEventListener("click", () => {
+      removeWork(trash.id);
+    });
+  });
 };

@@ -58,44 +58,24 @@ export const postLogin = async (data) => {
 };
 
 // // Suppression de travaux existants
+export const removeWork = async (id) => {
+  const user = localStorage.getItem("user");
 
-export const removeWork = async () => {
   try {
-    const dataWork = await fetch(
-      "http://localhost:5678/api/works/${works[i].id}",
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    const trash = document.querySelectorAll("#trash");
-    trash.forEach((trash) => {
-      trash.addEventListener("click", (e) => {
-        const workId = e.target.dataset.id;
-
-        const deleteWork = () => {
-          const gallery = document.querySelector(".gallery");
-          const figureDeleted = (gallery.innerHTML -= figureDeleted);
-        };
-
-        // id = "id-${works[i].id}"
-
-        // Supprimer le work de la base de données
-        // le stocker dans localStorage ?
-
-        //  Supprimer le work de l'affichage (portfolio + modale)
-      });
+    await fetch(`http://localhost:5678/api/works/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
     });
   } catch (error) {
     console.log(error);
+    return {
+      error: true,
+      message: "fetch not working",
+    };
   }
-  return {
-    error: true,
-    message: "fetch not working",
-  };
 };
 
 // Envoi d'un nouveau projet
@@ -117,9 +97,9 @@ export const postWork = async () => {
     // Ajouter le work dans le portfolio + modale
   } catch (error) {
     console.log(error);
+    return {
+      error: true,
+      message: "fetch not working",
+    };
   }
-  return {
-    error: true,
-    message: "fetch not working",
-  };
 };
