@@ -186,7 +186,7 @@ margin: auto;
 	flex-direction: column;
 }
 
-#contact input, #login input, .modaleHomePageEdit2 input {
+#contact input, #login input, .modaleHomePageEdit2 input, #category {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;

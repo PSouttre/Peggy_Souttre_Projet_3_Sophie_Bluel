@@ -59,12 +59,43 @@ export const postLogin = async (data) => {
 
 // // Suppression de travaux existants
 
-export const removeWork = () => {
-  const trash = document.querySelector("#trash");
-  const trashClick = trash.addEventListener("click", () => {
-    // fetch delete pour supprimer le work id-xde l'API en fonction de la poubelle cliquée id-x
-    // le stocker dans localStorage ?
-  });
+export const removeWork = async () => {
+  try {
+    const dataWork = await fetch(
+      "http://localhost:5678/api/works/${works[i].id}",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const trash = document.querySelectorAll("#trash");
+    trash.forEach((trash) => {
+      trash.addEventListener("click", (e) => {
+        const workId = e.target.dataset.id;
+
+        const deleteWork = () => {
+          const gallery = document.querySelector(".gallery");
+          const figureDeleted = (gallery.innerHTML -= figureDeleted);
+        };
+
+        // id = "id-${works[i].id}"
+
+        // Supprimer le work de la base de données
+        // le stocker dans localStorage ?
+
+        //  Supprimer le work de l'affichage (portfolio + modale)
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  return {
+    error: true,
+    message: "fetch not working",
+  };
 };
 
 // Envoi d'un nouveau projet
@@ -76,9 +107,14 @@ export const postWork = async () => {
       headers: { "Content-Type": "multipart/form-data" },
     });
 
-    //     // Creation de nouveau projet
-    //     const FormData =
+    const FormData = {
+      imageUrl: "image",
+      title: "title",
+      categoryId: "category",
+    };
+
     // // si j'ai image + title + category => postWork
+    // Ajouter le work dans le portfolio + modale
   } catch (error) {
     console.log(error);
   }
