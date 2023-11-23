@@ -74,6 +74,7 @@ export const displayWorksModale = (works) => {
     galleryModale.innerHTML += figureModale;
   }
 
+  // SUPPRIMER UN WORK
   // on récupère nos poubelles
   const trashes = document.querySelectorAll(".trash");
   // on ajoute l'evenement onClick qui appelera le fetch avec le bon id
@@ -82,20 +83,11 @@ export const displayWorksModale = (works) => {
       removeWork(trash.id);
     });
   });
-};
 
-// on récupère le nouveau work
-const imageUrl = document.getElementById("");
-const title = document.getElementById("title");
-const category = document.getElementById("category");
-
-const newWork = {
-  imageUrl,
-  title,
-  category,
+  // AJOUTER UN NOUVEAU WORK
+  // on ajoute l'évenement : au click du bouton envoyer = appelle le fetch
+  const buttonValider = document.getElementById("buttonValider");
+  buttonValider.addEventListener("click", () => {
+    postWork(formData);
+  });
 };
-// on ajoute l'évenement : au click du bouton envoyer = appelle le fetch
-const buttonValider = document.getElementById("buttonValider");
-buttonValider.addEventListener("click", () => {
-  postWork();
-});

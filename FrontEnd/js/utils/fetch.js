@@ -81,11 +81,27 @@ export const removeWork = async (id) => {
 // Envoi d'un nouveau projet
 export const postWork = async () => {
   try {
+    const formData = new FormData();
+
+    formData.append(
+      "title",
+      document.querySelector('input[name="title"]').value
+    );
+    formData.append(
+      "image",
+      document.getElementById("buttonAddImage").files[0]
+    );
+    formData.append(
+      "category",
+      document.querySelector('select[name="category"]').value
+    );
+    console.log(formData);
+
     await fetch("http://localhost:5678/api/works", {
       method: "POST",
-      body: JSON.stringify(newWork),
+      body: formData,
       headers: {
-        "Content-Type": "multipart/form-data",
+        accept: "application/json",
         Authorization: `Bearer ${user.token}`,
       },
     });
