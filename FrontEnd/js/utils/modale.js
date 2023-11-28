@@ -1,4 +1,5 @@
-import { removeWork } from "./fetch.js";
+import { displayWorks } from "./dom.js";
+import { getWorks, removeWork } from "./fetch.js";
 import { postWork } from "./fetch.js";
 
 export const openModale = () => {
@@ -60,6 +61,8 @@ export const back = () => {
 export const displayWorksModale = (works) => {
   const galleryModale = document.querySelector(".galleryModale");
 
+  galleryModale.innerHTML = "";
+
   // on boucle sur TOUS les works
   for (let i = 0; i < works.length; i++) {
     // créer une figure qui correspond à un work
@@ -79,15 +82,20 @@ export const displayWorksModale = (works) => {
   const trashes = document.querySelectorAll(".trash");
   // on ajoute l'evenement onClick qui appelera le fetch avec le bon id
   trashes.forEach((trash) => {
-    trash.addEventListener("click", () => {
-      removeWork(trash.id);
+    trash.addEventListener("click", async () => {
+      await removeWork(trash.id); // remove from BDD
+      const works = await getWorks(); // les récupérer dans la BDD
+      displayWorksModale(works); // refresh modale
+      displayWorks(works); // refresh DOM
     });
   });
 
   // AJOUTER UN NOUVEAU WORK
   // on ajoute l'évenement : au click du bouton envoyer = appelle le fetch
-  const buttonValider = document.getElementById("buttonValider");
-  buttonValider.addEventListener("click", () => {
-    postWork(formData);
+  const form = document.querySelector(".formAddWork");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    postWork();
   });
 };

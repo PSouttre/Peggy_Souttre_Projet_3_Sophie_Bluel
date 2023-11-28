@@ -52,7 +52,7 @@
 				<button id="buttonModifier">modifier</button>
 			</div>
 		</div>
-		<div class="filters"></div>
+		<div class="filters onlyAdmin"></div>
 		<div class="gallery"></div>
 	</section>
 	<section id="contact">
@@ -99,11 +99,11 @@
 			<h2>Ajout photo</h2>
 			<div class="addPhotoEdit2">
 				<i class="fa-regular fa-image" id="logoImg"></i>
-				<input type="submit" value="+ Ajouter une photo" id="buttonAddImg">
+				<input type="file" value="+ Ajouter une photo" id="buttonAddImg">
 				<p>jpg, png : 4mo max</p>
 			</div>
 			
-			<form action="#" method="post">
+			<form action="#" method="post" class="formAddWork">
 				<label for="title" class="title">Titre</label>
 				<input type="text" class="title" id="title" name="title" required>
 	

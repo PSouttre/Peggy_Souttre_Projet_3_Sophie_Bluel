@@ -80,24 +80,25 @@ export const removeWork = async (id) => {
 
 // Envoi d'un nouveau projet
 export const postWork = async () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   try {
     const formData = new FormData();
 
     formData.append(
       "title",
-      document.querySelector('input[name="title"]').value
+      document.querySelector("input[name='title']").value
     );
     formData.append(
       "image",
-      document.getElementById("buttonAddImage").files[0]
+      document.querySelector("input[type='file']").files[0]
     );
     formData.append(
       "category",
-      document.querySelector('select[name="category"]').value
+      document.querySelector('select[name="category"]').value.split("-")[1]
     );
-    console.log(formData);
 
-    await fetch("http://localhost:5678/api/works", {
+    const response = await fetch("http://localhost:5678/api/works", {
       method: "POST",
       body: formData,
       headers: {

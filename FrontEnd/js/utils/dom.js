@@ -35,6 +35,7 @@ export const displayCategories = (categories) => {
   }
 };
 
+// Affichage de la bannière et du bouton modifier pour l'admin
 export const displayAdminPart = () => {
   // si j'ai un token dans le localStorage
   // alors on affiche les boutons de modifications
@@ -49,3 +50,5 @@ export const displayAdminPart = () => {
     });
   }
 };
+
+// Affichage des nouveaux projets dans la galerie et dans la modale ??
