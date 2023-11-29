@@ -93,9 +93,30 @@ export const displayWorksModale = (works) => {
   // AJOUTER UN NOUVEAU WORK
   // on ajoute l'évenement : au click du bouton envoyer = appelle le fetch
   const form = document.querySelector(".formAddWork");
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
-
-    postWork();
+    await postWork();
+    const works = await getWorks(); // les récupérer dans la BDD
+    displayWorksModale(works); // refresh modale
+    displayWorks(works); // refresh DOM
   });
 };
+
+// Afficher l'image miniature de la modale
+const input = document.getElementById("buttonAddImg");
+const preview = document.getElementById("imgPreview");
+// export const displayImgPreview = () => {
+//   // on récupère l'input et la div pour l'image miniature
+
+//   // // on vérifie si un fichier est selectionné
+//   // if (input.files && input.files[0]) {
+//   //   // on lit le fichier
+//   //   const reader = new FileReader();
+//   //   // fonction callback quand la lecture est terminée
+//   //   reader.onload = function (e) {
+//   //     // on met à jour la source de l'img avec l'aperçu de l'image
+//   //     preview.src = e.target.result;
+//   //   };
+//   //   // On lit le contenu du fichier en tant que URL de données
+//   //   reader.readAsDataURL(input.files[0]);
+// };

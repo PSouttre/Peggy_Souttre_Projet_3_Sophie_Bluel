@@ -118,13 +118,13 @@ li:hover {
 	min-width: 0;
 }
 
+
 #modifier button:hover {
 	background-color: white;
 	color: rgba(0, 0, 0, 0.6);
 }
 
 .fa-regular:hover {
-	background-color: white;
 	color: rgba(0, 0, 0, 0.6);
 }
 
