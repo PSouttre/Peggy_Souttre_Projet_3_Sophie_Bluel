@@ -103,20 +103,64 @@ export const displayWorksModale = (works) => {
 };
 
 // Afficher l'image miniature de la modale
-const input = document.getElementById("buttonAddImg");
-const preview = document.getElementById("imgPreview");
+
+// on récupère l'input et la div pour l'image miniature
+
 // export const displayImgPreview = () => {
-//   // on récupère l'input et la div pour l'image miniature
+//   const input = document.getElementById("buttonAddImg");
+//   const preview = document.getElementById("imgPreview");
 
 //   // // on vérifie si un fichier est selectionné
-//   // if (input.files && input.files[0]) {
-//   //   // on lit le fichier
-//   //   const reader = new FileReader();
-//   //   // fonction callback quand la lecture est terminée
-//   //   reader.onload = function (e) {
-//   //     // on met à jour la source de l'img avec l'aperçu de l'image
-//   //     preview.src = e.target.result;
-//   //   };
-//   //   // On lit le contenu du fichier en tant que URL de données
-//   //   reader.readAsDataURL(input.files[0]);
+//   if (input.files && input.files[0]) {
+//     // on lit le fichier
+//     const reader = new FileReader();
+//     // fonction callback quand la lecture est terminée
+//     reader.onload = function (e) {
+//       //     // on met à jour la source de l'img avec l'aperçu de l'image
+//       preview.src = e.target.result;
+//       //   };
+//       //   // On lit le contenu du fichier en tant que URL de données
+//       reader.readAsDataURL(input.files[0]);
+//     };
+//   }
 // };
+//
+// function handleFiles(files) {
+//   for (let i = 0; i < files.length; i++) {
+//     const file = files[i];
+
+//     if (!file.type.startsWith("image/")) {
+//       continue;
+//     }
+
+//     // Pour chaque fichier image on créé un nouvel élément image
+//     const img = document.createElement("img");
+//     img.file = file;
+
+//     // On ajoute la vignette à la zone de prévisualisation
+//     const preview = document.getElementById("imgPreview");
+//     preview.appendChild(img);
+
+//     // On construit un objet FileReader pour gérer le chargement asynchrone de l'image et son rattachement à l'élément <img> correspondant
+//     const reader = new FileReader();
+//     // On paramètre sa fonction onload puis on appelle readAsDataURL() pour commencer la lecture en arrière plan
+//     reader.onload = (e) => {
+//       // on change l'attribut src de l'élément <img> pour utiliser l'image chargée et la faire apparaître comme vignette
+//       img.src = e.target.result;
+//     };
+//     reader.readAsDataURL(file);
+//   }
+// }
+
+const input = document.getElementById("buttonAddImg");
+// input.addEventListener("change", console.log(input.file));
+// console.log(input.files[0]);
+const preview = document.getElementById("imgPreview");
+
+input.addEventListener("change", (e) => {
+  console.log(e.target.files[0]);
+  const imageSource = URL.createObjectURL(e.target.files[0]);
+  console.log(imageSource);
+
+  preview.setAttribute("src", imageSource);
+});

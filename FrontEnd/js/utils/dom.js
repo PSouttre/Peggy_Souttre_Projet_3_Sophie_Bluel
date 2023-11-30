@@ -50,5 +50,3 @@ export const displayAdminPart = () => {
     });
   }
 };
-
-// Affichage des nouveaux projets dans la galerie et dans la modale ??
