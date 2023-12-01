@@ -110,35 +110,40 @@ export const displayWorksModale = (works) => {
     logoImg.classList.add("hidden");
   });
 
-  // REMPLISSAGE DU FORMULAIRE D'AJOUT D'UN NOUVEAU WORK
+  // FORMULAIRE D'AJOUT D'UN NOUVEAU WORK
 
   // si tous les champs sont ok alors le bouton valider devient vert
   // = si photo .png ou .pjg  + nom + catégorie
+  const form = document.querySelector(".formAddWork");
   form.addEventListener("change", async (event) => {
     event.preventDefault();
-    if (/*pas tous les champs rempli*/) {
-      alert("Veuillez renseigner tous les champs")
+
+    const tagTitle = document.getElementById("title");
+    const valueTitle = tagTitle.value;
+    const tagCategory = document.getElementById("category");
+    const valueCategory = tagCategory.value;
+    const preview = document.getElementById("imgPreview");
+    const valuePreview = preview.value;
+    const buttonValider = document.getElementById("buttonValider");
+
+    if (valueTitle != "" && valueCategory != "" && valuePreview != "") {
+      buttonValider.style.backgroundColor = "#1D6154";
+    } else {
+      alert("Veuillez renseigner tous les champs");
     }
-    else {
-      // changer le bouton en vert
-  }
   });
 };
 
+// AJOUTER UN NOUVEAU WORK
+// on ajoute l'évenement : au click du bouton envoyer = appelle le fetch
+const form = document.querySelector(".formAddWork");
+const preview = document.getElementById("imgPreview");
 
-
-
-  // AJOUTER UN NOUVEAU WORK
-  // on ajoute l'évenement : au click du bouton envoyer = appelle le fetch
-  const form = document.querySelector(".formAddWork");
-  const preview = document.getElementById("imgPreview");
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    await postWork();
-    const works = await getWorks(); // les récupérer dans la BDD
-    displayWorksModale(works); // refresh modale
-    displayWorks(works); // refresh DOM
-    closeModale();
-  });
-};
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  await postWork();
+  const works = await getWorks(); // les récupérer dans la BDD
+  displayWorksModale(works); // refresh modale
+  displayWorks(works); // refresh DOM
+  closeModale();
+});
