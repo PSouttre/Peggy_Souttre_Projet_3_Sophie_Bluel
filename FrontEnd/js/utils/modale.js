@@ -2,6 +2,7 @@ import { displayWorks } from "./dom.js";
 import { getWorks, removeWork } from "./fetch.js";
 import { postWork } from "./fetch.js";
 
+// OUVERTURE DE LA MODALE
 export const openModale = () => {
   const modifierBtn = document.querySelector("#modifier");
   const modale = document.querySelector(".modaleContainer");
@@ -27,6 +28,7 @@ export const openModale2 = () => {
   });
 };
 
+// FERMETURE DE LA MODALE
 export const closeModale = () => {
   const cross = document.querySelector("#cross");
   const modale = document.querySelector(".modaleContainer");
@@ -47,6 +49,7 @@ export const closeModale = () => {
   });
 };
 
+// CLICK SUR LA FLECHE RETOUR
 export const back = () => {
   const arrow = document.querySelector("#arrow");
   const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
@@ -58,6 +61,7 @@ export const back = () => {
   });
 };
 
+// AFFICHER LES TRAVAUX DANS LA MODALE
 export const displayWorksModale = (works) => {
   const galleryModale = document.querySelector(".galleryModale");
 
@@ -90,77 +94,51 @@ export const displayWorksModale = (works) => {
     });
   });
 
+  // AFFICHER L'IMAGE MINIATURE DE LA MODALE
+  const input = document.getElementById("buttonAddImg");
+  const preview = document.getElementById("imgPreview");
+  const labelAddImg = document.getElementById("labelAddImg");
+  const logoImg = document.getElementById("logoImg");
+
+  input.addEventListener("change", (e) => {
+    // console.log(e.target.files[0]);
+    const imageSource = URL.createObjectURL(e.target.files[0]);
+    // console.log(imageSource);
+
+    preview.setAttribute("src", imageSource);
+    labelAddImg.classList.add("hidden");
+    logoImg.classList.add("hidden");
+  });
+
+  // REMPLISSAGE DU FORMULAIRE D'AJOUT D'UN NOUVEAU WORK
+
+  // si tous les champs sont ok alors le bouton valider devient vert
+  // = si photo .png ou .pjg  + nom + catégorie
+  form.addEventListener("change", async (event) => {
+    event.preventDefault();
+    if (/*pas tous les champs rempli*/) {
+      alert("Veuillez renseigner tous les champs")
+    }
+    else {
+      // changer le bouton en vert
+  }
+  });
+};
+
+
+
+
   // AJOUTER UN NOUVEAU WORK
   // on ajoute l'évenement : au click du bouton envoyer = appelle le fetch
   const form = document.querySelector(".formAddWork");
+  const preview = document.getElementById("imgPreview");
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     await postWork();
     const works = await getWorks(); // les récupérer dans la BDD
     displayWorksModale(works); // refresh modale
     displayWorks(works); // refresh DOM
+    closeModale();
   });
 };
-
-// Afficher l'image miniature de la modale
-
-// on récupère l'input et la div pour l'image miniature
-
-// export const displayImgPreview = () => {
-//   const input = document.getElementById("buttonAddImg");
-//   const preview = document.getElementById("imgPreview");
-
-//   // // on vérifie si un fichier est selectionné
-//   if (input.files && input.files[0]) {
-//     // on lit le fichier
-//     const reader = new FileReader();
-//     // fonction callback quand la lecture est terminée
-//     reader.onload = function (e) {
-//       //     // on met à jour la source de l'img avec l'aperçu de l'image
-//       preview.src = e.target.result;
-//       //   };
-//       //   // On lit le contenu du fichier en tant que URL de données
-//       reader.readAsDataURL(input.files[0]);
-//     };
-//   }
-// };
-//
-// function handleFiles(files) {
-//   for (let i = 0; i < files.length; i++) {
-//     const file = files[i];
-
-//     if (!file.type.startsWith("image/")) {
-//       continue;
-//     }
-
-//     // Pour chaque fichier image on créé un nouvel élément image
-//     const img = document.createElement("img");
-//     img.file = file;
-
-//     // On ajoute la vignette à la zone de prévisualisation
-//     const preview = document.getElementById("imgPreview");
-//     preview.appendChild(img);
-
-//     // On construit un objet FileReader pour gérer le chargement asynchrone de l'image et son rattachement à l'élément <img> correspondant
-//     const reader = new FileReader();
-//     // On paramètre sa fonction onload puis on appelle readAsDataURL() pour commencer la lecture en arrière plan
-//     reader.onload = (e) => {
-//       // on change l'attribut src de l'élément <img> pour utiliser l'image chargée et la faire apparaître comme vignette
-//       img.src = e.target.result;
-//     };
-//     reader.readAsDataURL(file);
-//   }
-// }
-
-const input = document.getElementById("buttonAddImg");
-// input.addEventListener("change", console.log(input.file));
-// console.log(input.files[0]);
-const preview = document.getElementById("imgPreview");
-
-input.addEventListener("change", (e) => {
-  console.log(e.target.files[0]);
-  const imageSource = URL.createObjectURL(e.target.files[0]);
-  console.log(imageSource);
-
-  preview.setAttribute("src", imageSource);
-});
