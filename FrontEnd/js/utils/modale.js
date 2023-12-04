@@ -36,6 +36,7 @@ export const closeModale = () => {
   const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
   const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
   const buttonValider = document.getElementById("buttonValider");
+  const preview = document.getElementById("imgPreview");
 
   cross.addEventListener("click", () => {
     modale.classList.add("hidden");
@@ -47,13 +48,22 @@ export const closeModale = () => {
       modaleEdit2.classList.toggle("hidden");
     }
     modale.classList.add("hidden");
+    preview.src = "";
+    logoImg.classList.toggle("hidden");
+    labelAddImg.classList.toggle("hidden");
   });
 
   buttonValider.addEventListener("submit", () => {
     const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
-
+    const preview = document.getElementById("imgPreview");
     //NE FONCTIONNE PAS
     modaleEdit2.classList.toggle("hidden");
+    // vider la div imgPreview
+    preview.src = "";
+    logoImg.classList.toggle("hidden");
+    labelAddImg.classList.toggle("hidden");
+
+    // vider le titre et la categorie
   });
 };
 
@@ -66,6 +76,10 @@ export const back = () => {
   arrow.addEventListener("click", () => {
     modaleEdit1.classList.toggle("hidden");
     modaleEdit2.classList.toggle("hidden");
+    preview.src = "";
+    logoImg.classList.toggle("hidden");
+    labelAddImg.classList.toggle("hidden");
+    // vider le titre et la categorie
   });
 };
 
