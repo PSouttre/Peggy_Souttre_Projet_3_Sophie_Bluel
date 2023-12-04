@@ -35,6 +35,7 @@ export const closeModale = () => {
   const crossEdit2 = document.querySelector("#crossEdit2");
   const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
   const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
+  const buttonValider = document.getElementById("buttonValider");
 
   cross.addEventListener("click", () => {
     modale.classList.add("hidden");
@@ -46,6 +47,13 @@ export const closeModale = () => {
       modaleEdit2.classList.toggle("hidden");
     }
     modale.classList.add("hidden");
+  });
+
+  buttonValider.addEventListener("submit", () => {
+    const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
+
+    //NE FONCTIONNE PAS
+    modaleEdit2.classList.toggle("hidden");
   });
 };
 
@@ -111,9 +119,7 @@ export const displayWorksModale = (works) => {
   });
 
   // FORMULAIRE D'AJOUT D'UN NOUVEAU WORK
-
   // si tous les champs sont ok alors le bouton valider devient vert
-  // = si photo .png ou .pjg  + nom + catégorie
   const form = document.querySelector(".formAddWork");
   form.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -128,8 +134,6 @@ export const displayWorksModale = (works) => {
 
     if (valueTitle != "" && valueCategory != "" && valuePreview != "") {
       buttonValider.style.backgroundColor = "#1D6154";
-    } else {
-      alert("Veuillez renseigner tous les champs");
     }
   });
 };
@@ -145,5 +149,5 @@ form.addEventListener("submit", async (event) => {
   const works = await getWorks(); // les récupérer dans la BDD
   displayWorksModale(works); // refresh modale
   displayWorks(works); // refresh DOM
-  closeModale();
+  closeModale(); //NE FONCTIONNE PAS
 });

@@ -70,6 +70,13 @@ li:hover {
 #introduction figure {
 	flex: 1
 }
+
+figure {
+	padding-bottom: 20px;
+    position: relative;
+
+}
+
 #introduction img {
 	display: block;
 	margin: auto;
@@ -162,7 +169,7 @@ button:hover {
 	width: 100%;
 
 }
-#contact, #login, .modaleHomePageEdit1, .modaleHomePageEdit2 {
+#contact, #login, .modaleHomePageEdit1 {
 	width: 50%;
 margin: auto;
 }
@@ -176,10 +183,10 @@ margin: auto;
 
 }
 
-#contact h2, #login h2, .modaleHomePageEdit2 h2 {
+#contact h2, #login h2 {
 	margin-bottom: 20px;
 }
-#contact form, #login form, .modaleHomePageEdit2 form {
+#contact form, #login form {
 	text-align: left;
 	margin-top:30px;
 	display: flex;

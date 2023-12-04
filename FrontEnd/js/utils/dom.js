@@ -1,3 +1,4 @@
+// AFFICHAGE DES WORKS
 export const displayWorks = (works) => {
   // récupére là où on veut afficher nos works
   const gallery = document.querySelector(".gallery");
@@ -18,7 +19,7 @@ export const displayWorks = (works) => {
   }
 };
 
-// Affichage des catégories
+// AFFICHAGE DES CATEGORIES
 export const displayCategories = (categories) => {
   //on récupère là où on veut afficher nos catégories
   const filters = document.querySelector(".filters");
@@ -35,7 +36,7 @@ export const displayCategories = (categories) => {
   }
 };
 
-// Affichage de la bannière et du bouton modifier pour l'admin
+// AFFICHAGE DE LA BANNIERE ET DU BOUTON MODIFIER POUR L'ADMIN
 export const displayAdminPart = () => {
   // si j'ai un token dans le localStorage
   // alors on affiche les boutons de modifications
