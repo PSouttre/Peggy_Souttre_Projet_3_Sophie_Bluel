@@ -37,6 +37,8 @@ export const closeModale = () => {
   const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
   const buttonValider = document.getElementById("buttonValider");
   const preview = document.getElementById("imgPreview");
+  const tagTitle = document.getElementById("title");
+  const tagCategory = document.getElementById("category");
 
   cross.addEventListener("click", () => {
     modale.classList.add("hidden");
@@ -48,38 +50,47 @@ export const closeModale = () => {
       modaleEdit2.classList.toggle("hidden");
     }
     modale.classList.add("hidden");
+    // on vide l'image, le titre et la catégorie
     preview.src = "";
-    logoImg.classList.toggle("hidden");
-    labelAddImg.classList.toggle("hidden");
-  });
-
-  buttonValider.addEventListener("submit", () => {
-    const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
-    const preview = document.getElementById("imgPreview");
-    //NE FONCTIONNE PAS
-    modaleEdit2.classList.toggle("hidden");
-    // vider la div imgPreview
-    preview.src = "";
-    logoImg.classList.toggle("hidden");
-    labelAddImg.classList.toggle("hidden");
-
-    // vider le titre et la categorie
+    logoImg.classList.remove("hidden");
+    labelAddImg.classList.remove("hidden");
+    tagTitle.value = "";
+    tagCategory.value = "";
   });
 };
+
+// buttonValider.addEventListener("submit", () => {
+//   const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
+//   const preview = document.getElementById("imgPreview");
+//   //NE FONCTIONNE PAS
+//   modaleEdit2.classList.toggle("hidden");
+//   // vider la div imgPreview
+//   preview.src = "";
+//   logoImg.classList.remove("hidden");
+//   labelAddImg.classList.remove("hidden");
+
+// vider le titre et la categorie
+//   });
+// };
 
 // CLICK SUR LA FLECHE RETOUR
 export const back = () => {
   const arrow = document.querySelector("#arrow");
   const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
   const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
+  const tagTitle = document.getElementById("title");
+  const tagCategory = document.getElementById("category");
 
   arrow.addEventListener("click", () => {
     modaleEdit1.classList.toggle("hidden");
     modaleEdit2.classList.toggle("hidden");
     preview.src = "";
-    logoImg.classList.toggle("hidden");
-    labelAddImg.classList.toggle("hidden");
+    logoImg.classList.remove("hidden");
+    labelAddImg.classList.remove("hidden");
     // vider le titre et la categorie
+    tagTitle.value = "";
+    tagCategory.value = "";
+    // retour du bouton valider en gris
   });
 };
 
@@ -164,4 +175,7 @@ form.addEventListener("submit", async (event) => {
   displayWorksModale(works); // refresh modale
   displayWorks(works); // refresh DOM
   closeModale(); //NE FONCTIONNE PAS
+  preview.setAttribute("src", imageSource);
+  labelAddImg.classList.add("hidden");
+  logoImg.classList.add("hidden");
 });
