@@ -143,8 +143,7 @@ export const displayWorksModale = (works) => {
     logoImg.classList.add("hidden");
   });
 
-  // FORMULAIRE D'AJOUT D'UN NOUVEAU WORK
-  // si tous les champs sont ok alors le bouton valider devient vert
+  // CHANGEMENT DE COULEUR DU BOUTON VALIDER DU FORM D'AJOUT D'UN NOUVEAU WORK
   const form = document.querySelector(".formAddWork");
   form.addEventListener("change", async (event) => {
     event.preventDefault();
@@ -174,8 +173,14 @@ form.addEventListener("submit", async (event) => {
   const works = await getWorks(); // les récupérer dans la BDD
   displayWorksModale(works); // refresh modale
   displayWorks(works); // refresh DOM
+
+  // Fermer la modale
   closeModale(); //NE FONCTIONNE PAS
+  // Vider la preview
   preview.setAttribute("src", imageSource);
   labelAddImg.classList.add("hidden");
   logoImg.classList.add("hidden");
+  // vider le titre et la categorie
+  tagTitle.value = "";
+  tagCategory.value = "";
 });

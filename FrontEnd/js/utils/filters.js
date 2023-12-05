@@ -1,4 +1,4 @@
-// Ajout d'un eventListener au moment du clic d'un bouton catégorie
+// AJOUT D'UN EVENTLISTENER AU MOMENT DU CLIC D'UN BOUTON CATEGORIE
 import { getWorks } from "./fetch.js";
 import { displayWorks } from "./dom.js";
 

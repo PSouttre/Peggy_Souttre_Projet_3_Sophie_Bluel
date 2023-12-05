@@ -1,4 +1,4 @@
-// function async qui permet de récupérer les works
+// FUNCTION ASYNC QUI PERMET DE RECUPERER LES WORKS
 export const getWorks = async () => {
   try {
     // on part chercher les données (mais ça peut prendre du temps)
@@ -17,8 +17,7 @@ export const getWorks = async () => {
   }
 };
 
-// function async qui permet de récupérer les categories
-
+// FUNCTION ASYNC QUI PERMET DE RECUPERER LES CATEGORIES
 export const getCategories = async () => {
   try {
     const dataCategories = await fetch("http://localhost:5678/api/categories");
@@ -29,8 +28,7 @@ export const getCategories = async () => {
   }
 };
 
-// fonction pour envoyer email + mdp et récupérer userid et token
-
+// FUNCTION POUR RECUPERER MAIL + MDP ET USERID ET TOKEN
 export const postLogin = async (data) => {
   try {
     const dataAdmin = await fetch("http://localhost:5678/api/users/login", {
@@ -57,7 +55,7 @@ export const postLogin = async (data) => {
   }
 };
 
-// // Suppression de travaux existants
+// SUPPRESSION DES TRAVAUX EXISTENTS
 export const removeWork = async (id) => {
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -78,7 +76,7 @@ export const removeWork = async (id) => {
   }
 };
 
-// Envoi d'un nouveau projet
+// ENVOI D'UN NOUVEAU PROJET
 export const postWork = async () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
