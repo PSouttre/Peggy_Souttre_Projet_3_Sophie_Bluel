@@ -48,6 +48,9 @@ export const displayAdminPart = () => {
 
     adminDiv.forEach((div) => {
       div.classList.toggle("hidden");
+
+      const mesProjetsModeEdit = document.getElementById("mesProjetsModeEdit");
+      mesProjetsModeEdit.style.paddingBottom = "70px";
     });
   }
 };
