@@ -58,6 +58,7 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+	cursor: pointer;
 }
 
 li:hover {
@@ -123,6 +124,7 @@ figure {
 	padding: 0;
 	color: black;
 	min-width: 0;
+	cursor: pointer;
 }
 
 
@@ -169,7 +171,7 @@ button:hover {
 	width: 100%;
 
 }
-#contact, #login, .modaleHomePageEdit1 {
+#contact, #login {
 	width: 50%;
 margin: auto;
 }
