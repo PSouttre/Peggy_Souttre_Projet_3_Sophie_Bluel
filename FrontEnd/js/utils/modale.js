@@ -132,6 +132,7 @@ export const displayWorksModale = (works) => {
   const preview = document.getElementById("imgPreview");
   const labelAddImg = document.getElementById("labelAddImg");
   const logoImg = document.getElementById("logoImg");
+  const paragraph = document.getElementById("textAddPhoto");
 
   input.addEventListener("change", (e) => {
     // console.log(e.target.files[0]);
@@ -141,6 +142,7 @@ export const displayWorksModale = (works) => {
     preview.setAttribute("src", imageSource);
     labelAddImg.classList.add("hidden");
     logoImg.classList.add("hidden");
+    paragraph.classList.add("hidden");
   });
 
   // CHANGEMENT DE COULEUR DU BOUTON VALIDER DU FORM D'AJOUT D'UN NOUVEAU WORK
