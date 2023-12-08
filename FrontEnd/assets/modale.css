@@ -101,7 +101,7 @@
 	align-items: center;
 	background-color: #E8F1F6;
 	border-radius: 3px;
-	width: 70%;
+	width: 100%;
 }
 
 #logoImg {
@@ -162,11 +162,9 @@ input[type=file]{
 
 .formAddWork{
 	text-align: left;
-	margin-top:30px;
 	display: flex;
 	flex-direction: column;
 	width: 70%;
-	height: 100%;
 	padding: 20px;
 }
 

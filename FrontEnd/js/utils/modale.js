@@ -9,11 +9,11 @@ export const openModale = () => {
   const shadow = document.querySelector(".shadow");
   const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
   const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
-  const preview = document.getElementById("imgPreview");
 
-  const tagTitle = document.getElementById("title");
-  const tagCategory = document.getElementById("category");
   const buttonValider = document.getElementById("buttonValider");
+
+  const form = document.querySelector(".formAddWork");
+  const preview = document.getElementById("imgPreview");
 
   shadow.addEventListener("click", () => {
     modale.classList.add("hidden");
@@ -23,11 +23,11 @@ export const openModale = () => {
       modaleEdit2.classList.toggle("hidden");
     }
     // on vide l'image, le titre et la catégorie
+    form.reset();
     preview.src = "";
+
     logoImg.classList.remove("hidden");
     labelAddImg.classList.remove("hidden");
-    tagTitle.value = "";
-    tagCategory.value = "";
 
     // retour du bouton valider en gris
     buttonValider.style.backgroundColor = "#A7A7A7";
@@ -58,8 +58,7 @@ export const closeModale = () => {
   const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
   const buttonValider = document.getElementById("buttonValider");
   const preview = document.getElementById("imgPreview");
-  const tagTitle = document.getElementById("title");
-  const tagCategory = document.getElementById("category");
+  const form = document.querySelector(".formAddWork");
 
   cross.addEventListener("click", () => {
     modale.classList.add("hidden");
@@ -76,9 +75,7 @@ export const closeModale = () => {
     preview.src = "";
     logoImg.classList.remove("hidden");
     labelAddImg.classList.remove("hidden");
-    tagTitle.value = "";
-    tagCategory.value = "";
-
+    form.reset();
     // retour du bouton valider en gris
     buttonValider.style.backgroundColor = "#A7A7A7";
   });
@@ -89,9 +86,9 @@ export const back = () => {
   const arrow = document.querySelector("#arrow");
   const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
   const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
-  const tagTitle = document.getElementById("title");
-  const tagCategory = document.getElementById("category");
   const buttonValider = document.getElementById("buttonValider");
+  const form = document.querySelector(".formAddWork");
+  const preview = document.getElementById("imgPreview");
 
   arrow.addEventListener("click", () => {
     modaleEdit1.classList.toggle("hidden");
@@ -100,8 +97,7 @@ export const back = () => {
     logoImg.classList.remove("hidden");
     labelAddImg.classList.remove("hidden");
     // vider le titre et la categorie
-    tagTitle.value = "";
-    tagCategory.value = "";
+    form.reset();
     // retour du bouton valider en gris
     buttonValider.style.backgroundColor = "#A7A7A7";
   });
@@ -149,8 +145,8 @@ export const displayWorksModale = (works) => {
 
   input.addEventListener("change", (e) => {
     const imageSource = URL.createObjectURL(e.target.files[0]);
-
-    preview.setAttribute("src", imageSource);
+    // preview.setAttribute("src", imageSource);
+    preview.src = imageSource;
     labelAddImg.classList.add("hidden");
     logoImg.classList.add("hidden");
     paragraph.classList.add("hidden");
@@ -165,11 +161,9 @@ export const displayWorksModale = (works) => {
     const valueTitle = tagTitle.value;
     const tagCategory = document.getElementById("category");
     const valueCategory = tagCategory.value;
-    const preview = document.getElementById("imgPreview");
-    const valuePreview = preview.value;
     const buttonValider = document.getElementById("buttonValider");
 
-    if (valueTitle != "" && valueCategory != "" && valuePreview != "") {
+    if (valueTitle != "" && valueCategory != "" && input.value != "") {
       buttonValider.style.backgroundColor = "#1D6154";
     }
   });
@@ -204,11 +198,10 @@ form.addEventListener("submit", async (event) => {
 
   // Vider la preview
   preview.src = "";
+  form.reset();
   labelAddImg.classList.remove("hidden");
   logoImg.classList.remove("hidden");
   // vider le titre et la categorie
-  tagTitle.value = "";
-  tagCategory.value = "";
   // retour du bouton valider en gris
   buttonValider.style.backgroundColor = "#A7A7A7";
 });
