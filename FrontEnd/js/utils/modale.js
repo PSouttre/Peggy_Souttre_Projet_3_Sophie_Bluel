@@ -6,7 +6,7 @@ import { postWork } from "./fetch.js";
 export const openModale = () => {
   const modifierBtn = document.querySelector("#modifier");
   const modale = document.querySelector(".modaleContainer");
-  const shaddow = document.querySelector(".shaddow");
+  const shadow = document.querySelector(".shadow");
   const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
   const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
   const preview = document.getElementById("imgPreview");
@@ -15,7 +15,7 @@ export const openModale = () => {
   const tagCategory = document.getElementById("category");
   const buttonValider = document.getElementById("buttonValider");
 
-  shaddow.addEventListener("click", () => {
+  shadow.addEventListener("click", () => {
     modale.classList.add("hidden");
 
     if (!modaleEdit2.classList.contains("hidden")) {
@@ -182,6 +182,9 @@ const preview = document.getElementById("imgPreview");
 const tagTitle = document.getElementById("title");
 const tagCategory = document.getElementById("category");
 const buttonValider = document.getElementById("buttonValider");
+const modale = document.querySelector(".modaleContainer");
+const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
+const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -190,14 +193,19 @@ form.addEventListener("submit", async (event) => {
   displayWorksModale(works); // refresh modale
   displayWorks(works); // refresh DOM
 
+  if (!modaleEdit2.classList.contains("hidden")) {
+    modaleEdit1.classList.toggle("hidden");
+    modaleEdit2.classList.toggle("hidden");
+  }
+
   // Fermer la modale
-  // closeModale(); //NE FONCTIONNE PAS
   modale.classList.add("hidden");
+  // Supprimer le shadow
 
   // Vider la preview
-  preview.setAttribute("src", imageSource);
-  labelAddImg.classList.add("hidden");
-  logoImg.classList.add("hidden");
+  preview.src = "";
+  labelAddImg.classList.remove("hidden");
+  logoImg.classList.remove("hidden");
   // vider le titre et la categorie
   tagTitle.value = "";
   tagCategory.value = "";

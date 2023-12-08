@@ -23,6 +23,7 @@ export const handleForm = () => {
       const error = document.querySelector(".error");
       error.innerHTML = response.message;
       error.classList.remove("hidden");
+      // message à afficher : “Erreur dans l’identifiant ou le mot de passe”
     } else {
       // si OK
       localStorage.setItem("user", JSON.stringify(response));
