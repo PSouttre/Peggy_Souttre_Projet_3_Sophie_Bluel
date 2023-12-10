@@ -31,6 +31,7 @@ export const displayCategories = (categories) => {
   for (let i = 0; i < categories.length; i++) {
     // créer un bouton qui correspond à une catégorie
     const buttonCategories = `<button class='filter-tag' categoryId="${categories[i].id}">${categories[i].name}</button>`;
+
     //on insère dans la div filters
     filters.innerHTML += buttonCategories;
   }

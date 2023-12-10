@@ -5,14 +5,17 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
 }
+
 section {
 	margin: 50px 0
 }
+
 #blackBanner {
 	background-color: black;
 	color: white;
@@ -39,7 +42,6 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
@@ -48,12 +50,14 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
 nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
 
 }
+
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
@@ -63,10 +67,12 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
 #introduction {
 	display: flex;
 	align-items: center;
 }
+
 #introduction figure {
 	flex: 1
 }
@@ -74,7 +80,6 @@ li:hover {
 figure {
 	padding-bottom: 20px;
     position: relative;
-
 }
 
 #introduction img {
@@ -86,6 +91,7 @@ figure {
 #introduction article {
 	flex: 1
 }
+
 #introduction h2 {
 	margin-bottom: 1em;
 }
@@ -93,6 +99,7 @@ figure {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
 #mesProjetsModeEdit h2 {
 	text-align: center;
 	margin-bottom: 1em;
@@ -125,7 +132,6 @@ figure {
 	min-width: 0;
 	cursor: pointer;
 }
-
 
 #modifier button:hover {
 	background-color: white;
@@ -170,23 +176,24 @@ button:hover {
 	width: 100%;
 
 }
+
 #contact, #login {
 	width: 50%;
 margin: auto;
 }
+
 #contact > * {
 	text-align: center;
-
 }
 
 #login > * {
 	text-align: center;
-
 }
 
 #contact h2, #login h2 {
 	margin-bottom: 20px;
 }
+
 #contact form, #login form {
 	text-align: left;
 	margin-top:30px;
@@ -200,9 +207,11 @@ margin: auto;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
 #contact label, #login label, .modaleHomePageEdit2 label {
 	margin: 1em 0 1em 0;
 }
+
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
@@ -230,10 +239,10 @@ footer nav ul {
 	margin: 2em
 }
 
-
 .error{
 	color: red;
 }
+
 .hidden {
 	display: none !important;
 }

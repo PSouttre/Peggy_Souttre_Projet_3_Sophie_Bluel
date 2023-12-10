@@ -13,7 +13,6 @@ export const getWorks = async () => {
     return response;
   } catch (error) {
     console.log(error);
-    // gère l'erreur avec de UI (ex: message d'erreur, fin du loader, redirection...)
   }
 };
 

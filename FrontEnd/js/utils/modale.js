@@ -6,33 +6,8 @@ import { postWork } from "./fetch.js";
 export const openModale = () => {
   const modifierBtn = document.querySelector("#modifier");
   const modale = document.querySelector(".modaleContainer");
-  const shadow = document.querySelector(".shadow");
-  const modaleEdit1 = document.querySelector(".modaleHomePageEdit1");
-  const modaleEdit2 = document.querySelector(".modaleHomePageEdit2");
 
-  const buttonValider = document.getElementById("buttonValider");
-
-  const form = document.querySelector(".formAddWork");
-  const preview = document.getElementById("imgPreview");
-
-  shadow.addEventListener("click", () => {
-    modale.classList.add("hidden");
-
-    if (!modaleEdit2.classList.contains("hidden")) {
-      modaleEdit1.classList.toggle("hidden");
-      modaleEdit2.classList.toggle("hidden");
-    }
-    // on vide l'image, le titre et la catégorie
-    form.reset();
-    preview.src = "";
-
-    logoImg.classList.remove("hidden");
-    labelAddImg.classList.remove("hidden");
-
-    // retour du bouton valider en gris
-    buttonValider.style.backgroundColor = "#A7A7A7";
-  });
-
+  // Click sur "modifier"
   modifierBtn.addEventListener("click", () => {
     modale.classList.toggle("hidden");
   });
@@ -59,11 +34,14 @@ export const closeModale = () => {
   const buttonValider = document.getElementById("buttonValider");
   const preview = document.getElementById("imgPreview");
   const form = document.querySelector(".formAddWork");
+  const shadow = document.querySelector(".shadow");
 
+  // Click sur la croix de la 1ere modale
   cross.addEventListener("click", () => {
     modale.classList.add("hidden");
   });
 
+  // Click sur la croix de la 2eme modale
   crossEdit2.addEventListener("click", () => {
     if (!modaleEdit2.classList.contains("hidden")) {
       modaleEdit1.classList.toggle("hidden");
@@ -71,11 +49,34 @@ export const closeModale = () => {
     }
     modale.classList.add("hidden");
 
-    // on vide l'image, le titre et la catégorie
+    // on vide l'image et le formulaire
     preview.src = "";
+    form.reset();
+
+    // On fait réapparaître les logos
     logoImg.classList.remove("hidden");
     labelAddImg.classList.remove("hidden");
+
+    // retour du bouton valider en gris
+    buttonValider.style.backgroundColor = "#A7A7A7";
+  });
+
+  // Click en dehors de la modale
+  shadow.addEventListener("click", () => {
+    modale.classList.add("hidden");
+
+    if (!modaleEdit2.classList.contains("hidden")) {
+      modaleEdit1.classList.toggle("hidden");
+      modaleEdit2.classList.toggle("hidden");
+    }
+    // on vide l'image et le formulaire
     form.reset();
+    preview.src = "";
+
+    // On fait réapparaître les logos
+    logoImg.classList.remove("hidden");
+    labelAddImg.classList.remove("hidden");
+
     // retour du bouton valider en gris
     buttonValider.style.backgroundColor = "#A7A7A7";
   });
@@ -145,7 +146,6 @@ export const displayWorksModale = (works) => {
 
   input.addEventListener("change", (e) => {
     const imageSource = URL.createObjectURL(e.target.files[0]);
-    // preview.setAttribute("src", imageSource);
     preview.src = imageSource;
     labelAddImg.classList.add("hidden");
     logoImg.classList.add("hidden");
@@ -170,7 +170,6 @@ export const displayWorksModale = (works) => {
 };
 
 // AJOUTER UN NOUVEAU WORK
-// on ajoute l'évenement : au click du bouton envoyer = appelle le fetch
 const form = document.querySelector(".formAddWork");
 const preview = document.getElementById("imgPreview");
 const tagTitle = document.getElementById("title");
@@ -194,14 +193,13 @@ form.addEventListener("submit", async (event) => {
 
   // Fermer la modale
   modale.classList.add("hidden");
-  // Supprimer le shadow
 
   // Vider la preview
   preview.src = "";
   form.reset();
   labelAddImg.classList.remove("hidden");
   logoImg.classList.remove("hidden");
-  // vider le titre et la categorie
+
   // retour du bouton valider en gris
   buttonValider.style.backgroundColor = "#A7A7A7";
 });

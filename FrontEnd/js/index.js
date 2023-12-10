@@ -11,7 +11,6 @@ import {
   closeModale,
   back,
   displayWorksModale,
-  // displayImgPreview,
 } from "./utils/modale.js";
 import { logout } from "./utils/auth.js";
 
@@ -36,7 +35,6 @@ const init = async () => {
   closeModale();
   back();
   displayWorksModale(works);
-  // displayImgPreview();
 };
 
 init();

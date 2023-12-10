@@ -1,4 +1,4 @@
-/** MODALE */
+/** MODALE **/
 .modaleContainer {
 	z-index: 10;
 	position: fixed;
@@ -44,7 +44,6 @@
 	right: 5px;
  }
 
-
 .galleryModale {
 	width: 70%;
 	display: grid;
@@ -52,9 +51,11 @@
 	grid-column-gap: 10px;
 	grid-row-gap: 20px;
 }
+
 .galleryModale figure {
 	padding: 0;
 }
+
 #cross {
 	position: absolute;
 	top: 20px;
@@ -63,7 +64,6 @@
 	cursor: pointer;
 	color: rgba(0, 0, 0, 0.6);
 }
-
 
 .modaleHomePageEdit1 h2 , .modaleHomePageEdit2 h2 {
 	font-family: 'Work Sans' ;
@@ -113,7 +113,6 @@ input[type=file]{
 	display: none;
 }
 
-
 #labelAddImg {
 	display: flex;
 	border-radius: 50px;
@@ -129,7 +128,6 @@ input[type=file]{
 	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
-
 }
 
 .addPhotoEdit2 p {
@@ -149,7 +147,6 @@ input[type=file]{
 	left: 30px;
 	font-size: 24px;
 	cursor: pointer;
-
 }
 
 #crossEdit2 {
