@@ -1,4 +1,4 @@
-# Portfolio-architecte-sophie-bluel
+Créez une page web dynamique avec JavaScript
 
 Ce projet vous engage à créer une page web dynamique pour le site internet d'une architecte d'intérieur en utilisant JavaScript et en communiquant avec une API.
 
